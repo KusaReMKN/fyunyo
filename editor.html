@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ふゅにょげぇむぇでぃた</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html { font: 1.1rem 'Zen Maru Gothic', sans-serif; }
+table { width: 100%; }
+.h { font-weight: bold; font-size: 1.1rem; margin: .3rem auto; }
+canvas { image-rendering: crisp-edges; background: rgba(255, 128, 64, .5); }
+</style>
+<script type="module" src="./js/editor.js" defer></script>
+</head>
+<body>
+<h1>ふゅにょげぇむぇでぃた</h1>
+<hr>
+<div class="h">マップデータの情報</div>
+<div>
+データファイル:
+<button id="writedata">書き出す</button>
+<input type="file" id="datafile" accept="application/json">
+</div>
+<div>
+マップの大きさ:
+<input type="number" id="mapw" min="20" style="width: 3rem;">,
+<input type="number" id="maph" min="15" style="width: 3rem;">
+</div>
+<div>
+プレイヤの位置:
+<input type="number" id="mapl" style="width: 3rem;">,
+<input type="number" id="mapt" style="width: 3rem;">
+</div>
+<div>
+マップチップ:
+<input type="file" id="mapc" accept="image/*"><br>
+<img id="mapcimg">
+</div>
+<div>
+イベントプロシージャ:
+<select id="mapp"></select><br>
+<textarea id="mapptxt"></textarea>
+</div>
+<div>
+レイヤ:
+<select id="sel">
+<option value="m">移動可能方向 (M レイヤ)</option>
+<option value="i" selected>マップチップ (I レイヤ)</option>
+<option value="s">手動イベント (S レイヤ)</option>
+<option value="e">自動イベント (E レイヤ)</option>
+</select>
+</div>
+<div>
+ペン:
+<input type="number" id="pen" min="0" max="255" style="width: 3rem;">
+マップチップ画像をクリックして選択することもできます
+</div>
+<div>
+<button id="fill">埋める</button>
+<hr>
+<canvas id="canvas"></canvas>
+<hr>
+<pre id="debug"></pre>
+</body>
+</html>
